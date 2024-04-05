@@ -4,3 +4,138 @@
 @use "../vendor/" as *;
 @use "../layout/" as *;
 
+.testimonial {
+    position: relative;
+    padding-top: 10rem;
+    padding-bottom: 18rem;
+    background-image: url(/images/section-bg-2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 60rem;
+    background-position: center;
+    @include mediaQuery2 {
+      padding: 10rem 3rem 18rem 3rem;
+    }
+    @include mediaQuery {
+      padding: 10rem 2rem 30rem 2rem;
+    }
+    &__wrapper {
+      @include grid(2);
+      @include mediaQuery2 {
+        @include grid(1);
+      }
+      @include mediaQuery {
+        @include grid(1);
+      }
+    }
+    &__paragraph {
+      margin-top: 7rem;
+      @include mediaQuery2 {
+        margin-top: 2rem;
+      }
+      @include mediaQuery {
+        margin-top: 2rem;
+      }
+    }
+    p {
+      color: $clr-gray;
+      font-size: 2rem;
+    }
+    h4 {
+      color: $clr-gray;
+      font-size: 1.5rem;
+      letter-spacing: 0.2rem;
+    }
+    h2 {
+      font-size: 5rem;
+    }
+    span {
+      background: $clr-accent;
+      width: 3rem;
+      height: 2px;
+      display: block;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .stats {
+    position: relative;
+    padding: 30rem 0 10rem 0;
+    background-image: url(/images/section-bg-02.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 45rem;
+    background-position: center;
+    @include mediaQuery {
+      padding: 40rem 0 10rem 0;
+    }
+    &__wrapper {
+      @include flex(space-between, center);
+      @include mediaQuery2 {
+        @include grid(2);
+      }
+      @include mediaQuery {
+        @include grid(1);
+      }
+    }
+    &__box:last-child {
+      border-right: none;
+      padding-right: 0;
+    }
+    &__box {
+      border-right: 1px solid $clr-light;
+      margin-top: 7rem;
+      @include mediaQuery {
+        border-right: none;
+      }
+  
+      h3 {
+        text-align: center;
+        font-size: 4rem;
+        margin-bottom: 1rem;
+        margin-top: 2rem;
+      }
+      h4 {
+        text-align: center;
+        font-size: 2rem;
+      }
+    }
+    &__box:first-child {
+      padding-left: 0;
+    }
+    &__content-1 {
+      padding-right: 9rem;
+      padding-left: 0;
+      @include mediaQuery {
+        padding-left: unset;
+        padding-right: unset;
+      }
+    }
+    &__content-2 {
+      padding-right: 9rem;
+      @include mediaQuery2 {
+        padding-right: unset;
+      }
+      @include mediaQuery {
+        padding-right: unset;
+      }
+    }
+    &__content-3 {
+      padding-right: 9rem;
+      @include mediaQuery {
+        padding-right: unset;
+      }
+    }
+    &__content-4 {
+      padding-right: 0;
+    }
+    &__icon {
+      text-align: center;
+      i {
+        color: $clr-light;
+        font-size: 5rem;
+        background-color: $clr-dark;
+        padding: 2rem 2.5rem;
+      }
+    }
+  }
