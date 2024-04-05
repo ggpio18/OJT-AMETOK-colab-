@@ -1,0 +1,95 @@
+@use '../abstract' as *;
+
+$colors: (
+    "headersec" : $clr-headersec,
+    "footersec" : $clr-footersec,
+    "accent" : $clr-accent,
+    "primary" : $clr-primary,
+   
+);
+
+@each $key, $val in $colors {
+    .bg-#{$key} {
+        background-color: #{$val};
+    }
+
+    .text-#{$key} {
+        color: #{$val};
+    }
+}
+
+$displays: flex, grid, block, inline;
+@each $display in $displays {
+    .#{$display} {
+        display: #{$display};
+    }
+}
+
+
+$alignments: left, center, right, justify;
+@each $alignment in $alignments {
+    .text-#{$alignment} {
+       text-align: #{$alignment};
+    }
+}
+
+
+@for $i from 1 through 10 {
+    .mb-#{$i} {
+        margin-bottom: #{$i}rem;
+    }
+    .mx-#{$i} {
+        margin: 0 #{$i}rem;
+    }
+
+    .p-#{$i} {
+        padding: #{$i}rem;
+    }
+
+    .py-#{$i} {
+        padding: #{$i}rem 0;
+    }
+
+  
+    .gap-#{$i} {
+        gap: #{$i}rem;
+    }
+  
+}
+
+$width: (
+    "full" : 100%,
+    "1-2" : 50%,
+    "1-4" : 25%,
+    "1-3" : 33.3%,
+);
+
+@each $key, $val in $width {
+    .w-#{$key} {
+        width: #{$val};
+    }
+}
+
+$justify: (
+    "center": center,
+    "between": space-between,
+    "end": flex-end,
+);
+
+$align: (
+    "center": center,
+    "end": flex-end,
+);
+
+
+@each $key, $val in $justify {
+    .justify-#{$key} {
+       justify-content: #{$val};
+    }
+}
+
+@each $key, $val in $align {
+    .items-#{$key} {
+       align-items: #{$val};
+    }
+}

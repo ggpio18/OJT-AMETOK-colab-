@@ -1,0 +1,52 @@
+@use 'colors' as* ;
+
+@mixin imgCover($ht:1px, $wd:100%){
+    height: $ht;
+    width: $wd;
+    object-fit: cover;
+}
+
+@mixin mediaQuery($width: $sm) {
+    @media(max-width:$width){
+        @content;
+    }
+}
+@mixin mediaQuery2($width:$md) {
+    @media (max-width:$width) {
+        @content;
+    }
+}
+
+@mixin grid($cols: 1, $gap: 1rem){
+    display: grid;
+    grid-template-columns: repeat($cols, 1fr);
+    grid-gap: $gap;
+} 
+
+
+@mixin grid-row($rows: 1, $gap: 1rem){
+    display: grid;
+    // grid-template-rows: repeat($rows, 1fr);
+    grid-gap: $gap;
+}
+
+@mixin unevenGrid($val, $gap: 1rem){
+    display: grid;
+    grid-template-columns: $val;
+    grid-gap: $gap;
+}
+
+@mixin absolute ($top:0, $right:0 ,$bottom:0, $left:0) {
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin flex($justify:flex-start, $align: flex-start) {
+    display:flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
