@@ -1,3 +1,22 @@
 @use '../abstract/' as*;
 
+.blockheader{
+    &__wrapper{
+        text-align: center;
+        .vl {
+            margin: 0 auto;
+            border-top: 2px solid #fcb222;
+            height: 14px;
+            width: 30px;
+            margin-top: 2rem;
+          }
+          p{
+            color: #cfcfca;
+          }
+          h2{
+            margin-bottom: 2rem;
+            color: $clr-dark;
+          }
 
+    }
+}
