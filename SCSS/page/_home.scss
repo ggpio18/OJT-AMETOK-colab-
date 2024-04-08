@@ -22,7 +22,9 @@
         justify-content: center;
         li{
             font-size: 2rem;
-            padding: 2.5rem 12.1rem;
+            width: 100%;
+            padding: 2.5rem 0;
+            text-align: center;
         }
     }
     &__nav ul li.active{
