@@ -4,3 +4,56 @@
 @use "../vendor/" as *;
 @use "../layout/" as *;
 
+.experiences{
+    background-color: $clr-primary;
+    font-family: "Barlow-Reg";
+
+    &__nav ul li:first-child{
+        background-color: $clr-headersec;
+    }
+    &__nav ul li:nth-child(2){
+        background-color: $clr-blackmagic;
+    }
+    &__nav ul li:last-child{
+        background-color: $clr-headersec;
+    }
+    &__nav ul{
+        display: flex; 
+        justify-content: center;
+        li{
+            font-size: 2rem;
+            padding: 2.5rem 12.1rem;
+        }
+    }
+    &__tab{
+        position: relative;
+    }
+
+    &__item{
+        position: absolute;
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+        justify-content: space-between;
+        gap: 6rem;
+        
+        ul{
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            color: $clr-headersec;
+        }
+        i{
+            background-color: rgba($color: #818181, $alpha: 0.2);
+            padding: 1rem;
+            color: $clr-accent;
+            font-size: 2rem;
+            margin-right: 1rem;
+        }
+    }
+    .text-title{
+        color: $clr-accent;
+        font-size: 3rem;
+        margin-bottom: 2.5rem;
+    }
+
+}
