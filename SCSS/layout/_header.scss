@@ -5,6 +5,7 @@
     @include mediaQuery{
         display: none;
     }
+    background-color: $clr-headersec;
     &__wrapper{
         display: grid;
         justify-content: center;
