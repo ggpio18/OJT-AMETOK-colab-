@@ -5,14 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ametok - Construction & Industry</title>
     <link rel="shortcut icon" href="./images/LOGO.ico">
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.min.css">
     <link rel="stylesheet" href="./dist/css/main.min.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
   </head>
 <body>
 
@@ -54,7 +49,7 @@
             </div>
            
             <ul class="header__nav"  id="menu">
-                <li class="dropdown-parent"><a href="#dropdown">Home <i class="fa-solid fa-chevron-down"></i></a>
+                <li class="dropdown-parent active"><a href="home.html"><h4>Home <i class="fa-solid fa-chevron-down"></i></h4></a>
                     <ul class ="main-dropdown">
                         <li><a href="">Home Engineering</a></li>
                         <li><a href="">Home Industry</a></li>
@@ -64,7 +59,7 @@
                         <li><a href="">Home Handyman</a></li>
                     </ul>
                 </li>
-                <li class="dropdown-parent"><a href="#">Pages <i class="fa-solid fa-chevron-down"></i></a>
+                <li class="dropdown-parent"><a href="#"><h4>Pages <i class="fa-solid fa-chevron-down"></i></h4></a>
                     <ul class ="main-dropdown">
                         <li><a href="">About Us</a></li>
                         <li><a href="">Store</a></li>
@@ -72,21 +67,21 @@
                         <li><a href="">404 Page</a></li>
                     </ul>
                 </li>
-                <li class="dropdown-parent"><a href="#">Services</a></li>
-                <li class="dropdown-parent"><a href="#">Projects <i class="fa-solid fa-chevron-down"></i></a>
+                <li class="dropdown-parent"><a href="#"><h4>Services</h4></a></li>
+                <li class="dropdown-parent"><a href="#"><h4>Projects <i class="fa-solid fa-chevron-down"></i></h4></a>
                     <ul class ="main-dropdown">
                         <li><a href="">Projects</a></li>
                         <li><a href="">Project Single</a></li>    
                     </ul>
                 </li>
-                <li class="dropdown-parent"><a href="#">News <i class="fa-solid fa-chevron-down"></i></a>
+                <li class="dropdown-parent"><a href="#"><h4>News <i class="fa-solid fa-chevron-down"></i></h4></a>
                     <ul class ="main-dropdown">
                         <li><a href="">News List</a></li>
                         <li><a href="">News Grid</a></li>
                         <li><a href="">Blog Details</a></li>
                     </ul>
                 </li>
-                <li class="dropdown-parent"><a href="#">Contact</a></li>
+                <li class="dropdown-parent"><a href="#"><h4>Contact</h4></a></li>
             </ul>
             <div class="icons">
                 <ul>
@@ -235,7 +230,6 @@
     </div>
 </section>
 
-
 <!-- BLOCK HEADER PIO -->
 <section class="blockheader">
     <div class="container">
@@ -245,7 +239,7 @@
             <h2>News & Articles </h2>
         </div>
     </div>
-  </section>
+</section>
 
 <!-- NEWS -->
 <section class="news">
@@ -254,8 +248,8 @@
 
             <div class="news__cards">
 
-                <div class="news__card active">
-                        <div class="card__image">
+                <div class="news__card">
+                    <div class="card__image">
                             <div class="shadow"></div>
                             <img src="./images/blog1.jpg" alt="">
                             <h4>08 Jul</h4>
@@ -301,6 +295,40 @@
     </div>
 </section>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+
+    <script>
+    var slider = tns({
+        container: '.news__cards',
+        items: 1,
+        slideBy: "page",
+        autoplay: true,
+        loop:false,
+        mouseDrag:true,
+        touch: true,
+        swipeAngle:false,
+        autoplayButtonOutput: false,
+        controls:false,
+        nav: false,
+        gutter: 20,
+        
+        
+        responsive: {
+              421: {
+                items: 3,
+                gutter: 20,
+              },
+              768: {
+                items: 2,
+                gutter: 20,
+              },
+            },
+    
+
+      });
+  </script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="/js/loader.js"></script>   
  <script src="/js/script.js"></script>   
 </body>
