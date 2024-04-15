@@ -1,0 +1,95 @@
+@use '../abstract/' as *;
+@use '../base/' as *;
+@use '../component/' as *;
+@use '../layout/' as *;
+@use '../vendor/' as *;
+
+.servicePage{
+    &__wrapper{
+        .thumbnailImg{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+        @include mediaQuery(1629px){
+            .info__wrap{
+                display: none;
+        }
+        }
+        @include for-size(tablet){
+            .info__wrap{
+                display: none;
+        }
+        }
+        @include for-size(phone){
+            .info__wrap{
+                display: none;
+        }
+        }
+        .info__wrap{
+            position: absolute;
+            bottom: 46%;
+            right: 25%;
+            background-color: #fff;
+            box-shadow: 0 10px 60px rgba(0,0,0,.1);
+            border-top: 6px solid #fcb222;
+            padding: 38px 50px;
+            .info{
+                margin-bottom: 1.6rem;
+                span{
+                    display: inline-block;
+                    font-size: 16px;
+                    line-height: 26px;
+                }
+                .title{
+                    font-weight: 800;
+                    color: black;
+                    min-width: 160px;
+                }
+                .text{
+                    min-width: 100px;
+                }
+            
+            }
+        
+        }
+
+        .servicePage__title{
+            h2{
+                margin-top: 6rem;
+            margin-bottom: 2rem;
+            }
+        }
+        .servicePage__content{
+            line-height: 36px;
+            color: #767688;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            p{
+                color: #767688;
+            }
+        }
+        .servicePage__content2{
+            line-height: 36px;
+            color: #767688;
+            margin-top: 3rem;
+            margin-bottom: 15rem;
+            p{
+                color: #767688;
+            }
+        }
+        .servicePage__subtitle{
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            p{
+                font-weight: 500;
+                text-wrap: wrap;
+                color: #fcb222;
+                font-size: 2rem;
+            }
+        }
+    }
+}
