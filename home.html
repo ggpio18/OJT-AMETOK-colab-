@@ -294,6 +294,71 @@
     </div>
 </section>
 
+<!-- BLOCK HEADER PIO -->
+<section class="blockheader">
+    <div class="container">
+        <div class="blockheader__wrapper">
+            <div class="vl"></div>
+            <p>FROM THE BLOG</p>
+            <h2>News & Articles </h2>
+        </div>
+    </div>
+</section>
+
+<!-- NEWS  micha-->
+<section class="news">
+    <div class="container">
+        <div class="news__wrapper">
+
+            <div class="news__cards">
+
+                <div class="news__card">
+                    <div class="card__image">
+                            <div class="shadow"></div>
+                            <img src="./images/blog1.jpg" alt="">
+                            <h4>08 Jul</h4>
+                    </div>
+                    <div class="card__text">
+                      <span>By <a href="">Kevin</a> / <a href="">0 Comments</a></span>
+                      <h2>Best Architecture Blogs to Follow in 2021</h2>
+                      <p>Lorem ipsum is simply free text used by copytyping refreshing.</p>
+                    </div>
+                </div>
+
+                <div class="news__card">
+                    <div class="card__image">
+                        <div class="shadow"></div>
+                        <img src="./images/blog2.jpg" alt="">
+                        <h4>08 Jul</h4>
+                    </div>
+                    <div class="card__text">
+                      <span>By <a href="">Kevin</a> / <a href="">0 Comments</a></span>
+                      <h2>Best Architecture Blogs to Follow in 2021</h2>
+                      <p>Lorem ipsum is simply free text used by copytyping refreshing.</p>
+                    </div>
+                </div>
+                
+                <div class="news__card">
+                    <div class="card__image">
+                        <div class="shadow"></div>
+                        <img src="./images/blog3.jpg" alt="">
+                        <h4>08 Jul</h4>
+                    </div>
+                    <div class="card__text">
+                      <span>By <a href="">Kevin</a> / <a href="">0 Comments</a></span>
+                      <h2>Best Architecture Blogs to Follow in 2021</h2>
+                      <p>Lorem ipsum is simply free text used by copytyping refreshing.</p>
+                    </div>
+                </div>
+
+               
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- SLIDER HOPLON -->
 <!-- Set up your HTML -->
 <div class="container2">
@@ -307,6 +372,8 @@
         <div> <img src="./photo/partner-logo.png" alt="image" class="card__img"> </div>
       </div>
     </div>
+
+
 
 <!-- LINKS FOOTER -->
 <section class="linkf">
@@ -373,5 +440,39 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="/js/loader.js"></script>   
  <script src="/js/script.js"></script>   
+
+ <!-- tiny slider  micha -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+    <script>
+    var slider = tns({
+        container: '.news__cards',
+        items: 1,
+        slideBy: "page",
+        autoplay: true,
+        loop:false,
+        mouseDrag:true,
+        touch: true,
+        swipeAngle:false,
+        autoplayButtonOutput: false,
+        controls:false,
+        nav: false,
+        gutter: 20,
+        
+        
+        responsive: {
+              421: {
+                items: 3,
+                gutter: 20,
+              },
+              768: {
+                items: 2,
+                gutter: 20,
+              },
+            },
+    
+
+      });
+  </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </body>
 </html>
