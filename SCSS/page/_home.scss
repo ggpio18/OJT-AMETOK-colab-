@@ -149,6 +149,7 @@
         cursor:grabbing;
         span{
             color: $clr-accent;
+            font-size: 1.5rem;
         }
         a{
             color: $clr-accent;
@@ -166,8 +167,8 @@
         
     }
     .card__text{
-        overflow: hidden;
-       width: 68%;
+
+        font-size: 2rem;
     }
    
     .card__image{
@@ -185,6 +186,7 @@
             line-height: 2rem;
             margin-top: 1.5rem;
             margin-left: 1.5rem;
+            font-size: 2rem;
         }
     }
     &__card.active{
