@@ -174,7 +174,7 @@
 /* ---------------------------STATS---------------------------*/
 .stats {
   position: relative;
-  padding: 25rem 0 17rem 0;
+
   background-image: url(/images/section-bg-02.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -191,6 +191,9 @@
     @include for-size(phone) {
       @include grid(1);
     }
+    padding-top:25rem;
+    padding-bottom: 8rem;
+
   }
   &__box:last-child {
     border-right: none;

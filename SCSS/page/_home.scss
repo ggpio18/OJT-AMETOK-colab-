@@ -200,6 +200,7 @@
         justify-content: space-between;
         padding: 5rem 0;
         opacity: 0;
+        
         ul{
             @include for-size(phone){
                 margin-top: 5rem;
@@ -851,17 +852,16 @@
   
   /* ---------------------------EXPERIENCES---------------------------*/
   .experiences {
-    .container  {
-      position: absolute;
-      z-index: 1;
-      margin: 0 auto;
-      left: 0;
-      right: 0;
-      transform: translateY(-14.5%);
-    }
+    // .container  {
+    //   position: absolute;
+    //   z-index: 1;
+    //   margin: 0 auto;
+    //   left: 0;
+    //   right: 0;
+    //   transform: translateY(-14.5%);
+    // }
    
-    background-color: $clr-primary;
-    font-family: "Barlow-Reg";
+   
   
     &__nav ul li:first-child {
       background-color: $clr-headersec;
