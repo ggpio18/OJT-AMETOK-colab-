@@ -13,6 +13,21 @@ document.addEventListener('DOMContentLoaded',
         });
     });
 
+$(".types__card").hover(function () {
+  $(".types__cards > .types__card").removeClass("active");
+  $(this).addClass("active");
+});
+
+$(".cards__blank").hover(function () {
+  $(".cards__slide > .cards__blank").removeClass("active");
+  $(this).addClass("active");
+});
+
+$(".contractor__blank").hover(function () {
+  $(".contractor__card > .contractor__blank").removeClass("active");
+  $(this).addClass("active");
+});
+
 $('.news__card').hover(function() {
   $('.news__cards > .news__card').removeClass('active')
   $(this).addClass('active');

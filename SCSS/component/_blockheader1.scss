@@ -1,0 +1,27 @@
+@use '../abstract/' as *;
+
+.blockheader1{
+  padding-top: 50rem;
+    &__wrapper{
+        text-align: center;
+        .vl {
+            margin: 0 auto;
+            border-top: 2px solid #fcb222;
+            height: 14px;
+            width: 30px;
+            margin-top: 4rem;
+          }
+          p{
+            color: $clr-headertext;
+            font-weight: 600;
+            letter-spacing: .3rem;
+          }
+          h2{
+            margin-bottom: 2rem;
+            color: $clr-dark;
+            font-size: 5rem;
+            font-weight: 600;
+          }
+
+    }
+}

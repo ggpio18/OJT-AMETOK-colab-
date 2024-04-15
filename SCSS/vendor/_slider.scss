@@ -1,0 +1,55 @@
+@use "../abstract" as *;
+
+.tns-outer {
+  position: relative;
+  .tns-nav {
+    position: absolute;
+    z-index: 3;
+    bottom: -7rem;
+    left: 56rem;
+    @include for-size(tablet) {
+      left: 28rem;
+    }
+    @include for-size(phone) {
+      left: 6rem;
+    }
+
+    button {
+      margin: 0 0.5rem;
+      width: 15px;
+      height: 15px;
+      border: none;
+      background-color: rgba(36, 36, 36, 0.3);
+    }
+
+    & button.tns-nav-active {
+      background-color: $clr-light;
+    }
+  }
+}
+
+.tns-controls {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  right: 35rem;
+  @include for-size(tablet) {
+    right: 3rem;
+  }
+  @include for-size(phone) {
+    display: none;
+  }
+  button {
+    background: $clr-light;
+    border: none;
+    font-size: 3rem;
+    color: $clr-dark;
+    padding: 2rem;
+    transition: 0.3s ease;
+  }
+  button:hover {
+    background: $clr-accent;
+    color: $clr-light;
+    transition: 0.3s ease;
+  }
+}

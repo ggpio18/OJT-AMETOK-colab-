@@ -1,0 +1,248 @@
+@use "../abstract" as *;
+@use "../base" as *;
+@use "../component" as *;
+@use "../layout" as *;
+@use "../vendor" as *;
+
+/* ---------------------------SERVICES---------------------------*/
+.services {
+  background-image: url(/images/h4-section-bg-01.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 57rem;
+  background-position: center;
+  position: relative;
+  text-align: center;
+  padding-top: 9rem;
+  @include for-size(phone) {
+    min-height: 60rem;
+  }
+  .ln {
+    margin: 0 auto;
+    border-top: 2px solid #fcb222;
+    height: 14px;
+    width: 30px;
+  }
+  p {
+    color: $clr-headertext;
+    font-weight: 600;
+    letter-spacing: 0.3rem;
+  }
+  h2 {
+    color: $clr-dark;
+    font-size: 5rem;
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+}
+/* ---------------------------ITEMS---------------------------*/
+.items {
+  position: absolute;
+  z-index: 99999;
+  margin-top: -31.5rem;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 70rem;
+
+  @include for-size(tablet) {
+    left: 3rem;
+    top: 60rem;
+  }
+  @include for-size(phone) {
+    top: 65rem;
+    left: 0.5rem;
+  }
+  &__cards {
+    @include grid(3, 3.5rem);
+
+    @include for-size(tablet) {
+      @include grid(3, 0.5rem);
+    }
+    @include for-size(phone) {
+      @include grid(1, 3rem);
+    }
+  }
+  &__card {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: 0.5s ease;
+    overflow: hidden;
+    display: block;
+    @include for-size(tablet) {
+      width: 90%;
+    }
+    @include for-size(phone) {
+      width: 70%;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    }
+    img {
+      width: 100%;
+    }
+  }
+  &__card:hover {
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
+    transition: 0.5s ease;
+    a,
+    i {
+      color: $clr-accent;
+      transition: 0.5s ease;
+    }
+    img {
+      transform: scale(1.1);
+      transition: 0.5s ease;
+    }
+  }
+  h3 {
+    color: $clr-dark;
+    margin-bottom: 2rem;
+  }
+  p {
+    color: $clr-headertext;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+  }
+  &__content {
+    padding: 4rem 3rem;
+    background: $clr-light;
+  }
+  &__img {
+    overflow: hidden;
+  }
+  &__btn {
+    width: 35%;
+    @include for-size(tablet) {
+      width: 60%;
+    }
+    a {
+      color: $clr-headertext;
+      position: relative;
+    }
+    i {
+      color: $clr-headertext;
+      margin-left: 1rem;
+      position: absolute;
+      bottom: 4.5rem;
+      @include for-size(tablet) {
+        bottom: 4.4rem;
+      }
+      @include for-size(phone) {
+        bottom: unset;
+        margin-top: 0.6rem;
+      }
+    }
+  }
+  &__btn:hover i {
+    animation: slide-right 0.2s ease-out both;
+  }
+  @keyframes slide-right {
+    0% {
+      transform: translateX(-30px);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+}
+/* ---------------------------CHOOSE---------------------------*/
+.choose {
+  position: relative;
+  padding: 40rem 0 12rem 0;
+  @include for-size(tablet) {
+    padding: 45rem 3rem 12rem;
+  }
+  @include for-size(phone) {
+    padding: 170rem 3rem 12rem;
+  }
+  &__title {
+    @include grid(2);
+    @include for-size(tablet) {
+      @include grid(1);
+    }
+    @include for-size(phone) {
+      @include grid(1);
+    }
+  }
+  p {
+    color: $clr-headertext;
+    font-size: 2rem;
+    @include for-size(phone) {
+      margin-top: 1.5rem;
+    }
+  }
+  h4 {
+    color: $clr-headertext;
+    font-size: 1.5rem;
+    letter-spacing: 0.2rem;
+    margin-bottom: 0;
+  }
+  h2 {
+    font-size: 5rem;
+    color: $clr-dark;
+    font-weight: 100;
+    margin-bottom: 0;
+    @include for-size(phone) {
+      font-size: 4rem;
+    }
+  }
+  span {
+    background: $clr-accent;
+    width: 3rem;
+    height: 2px;
+    display: block;
+    margin-bottom: 1rem;
+  }
+  &__boxes {
+    @include grid(4);
+    margin-top: 4rem;
+    @include for-size(tablet) {
+      @include grid(2, 3rem);
+      margin-top: 6rem;
+    }
+    @include for-size(phone) {
+      @include grid(1, 3rem);
+    }
+  }
+  &__box:last-child {
+    border-right: none;
+  }
+  &__box {
+    border-right: 1px solid $clr-headertext;
+    @include for-size(tablet) {
+      border-right: none;
+    }
+    @include for-size(phone) {
+      border-right: none;
+    }
+    h3 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      margin-top: 1.5rem;
+      color: $clr-dark;
+      font-weight: 800;
+    }
+    p {
+      text-align: center;
+      font-size: 2rem;
+    }
+  }
+  &__icon {
+    text-align: center;
+    i {
+      background-color: $clr-accent;
+      color: $clr-light;
+      font-size: 5rem;
+      padding: 2rem 2.5rem;
+    }
+  }
+  &__content {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    background: $clr-light;
+  }
+}

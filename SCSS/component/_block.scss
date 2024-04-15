@@ -1,0 +1,35 @@
+@use '../abstract' as *;
+
+.block {
+  background-image: url(/images/featured-title-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 30rem;
+  background-position: center;
+  @include for-size(tablet) {
+    padding: 0 1.5rem;
+  }
+  @include for-size(phone) {
+    padding: 0 0 0 1.5rem;
+  }
+  
+  .container {
+    position: relative;
+  }
+  h2 {
+    font-size: 5rem;
+    padding-top: 10rem;
+    margin-bottom: 8.4rem;
+  }
+  h4 {
+    background-color: $clr-accent;
+    padding: 0.5rem 2rem;
+    position: absolute;
+    margin-bottom: 0;
+    right: 0;
+    @include for-size(phone) {
+      right: unset;
+      width: 92%;
+    }
+  }
+}
