@@ -267,6 +267,7 @@
       cursor:grabbing;
       span{
           color: $clr-accent;
+          font-size: 1.5rem;
       }
       a{
           color: $clr-accent;
@@ -281,6 +282,10 @@
       p{
           color: $clr-headertext
       }
+
+  }
+  .card__text{
+    font-size: 2rem;
   }
   .card__image{
       position: relative;
@@ -297,6 +302,7 @@
           line-height: 2rem;
           margin-top: 1.5rem;
           margin-left: 1.5rem;
+          font-size: 2rem;
       }
   }
   &__card.active{
