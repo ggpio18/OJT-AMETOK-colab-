@@ -31,13 +31,12 @@
     }
     // reponsive needed
     .title1{
-        position: absolute;
-        top: 100%;
+        // top: 100%;
         text-align: center;
         h2{
             margin-top: 10rem;
             color: #fff;
-            // font-size: 60px;
+            font-size: 40px;
         }
     }
     @include for-size(phone){
@@ -253,6 +252,8 @@
 
 //micha news slider
 .news{
+    margin-top: 5rem;
+      margin-bottom: 5rem;
   @include for-size(phone){
       margin-top: 5rem;
       margin-bottom: 5rem;
