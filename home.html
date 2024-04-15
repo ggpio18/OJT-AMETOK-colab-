@@ -203,7 +203,7 @@
               <i class="fa-solid fa-arrow-right"></i>Offering complete
               integrated package
             </li>
-            <button class="btn2">Discover More</button>
+            <button class="btnban ">Discover More</button>
           </ul>
         </div>
       </div>
@@ -872,10 +872,12 @@
 
 <!-- PARALAX VIDEO WITH BTN PIO -->
 <section class="parallax">
+  <div class="try">
     <div class="video" onclick="toggleVideo()">
         <div class="play-btn">
         <i class="fa-solid fa-play"></i>
         </div>
+      
     <!-- Container for the YouTube video -->
 <div id="youtube-video-container">
     <iframe id="youtube-video" src="https://www.youtube.com/embed/VIDEO_ID_HERE" frameborder="0" allowfullscreen></iframe>
@@ -884,6 +886,7 @@
             <h2>Great Experience For Building <br> Construction & Industry</h2>
         </div>
     </div>
+  </div>
     
 </section>
 
@@ -1125,6 +1128,10 @@
         
         responsive: {
             1440:{
+                items: 3,
+                gutter: 20,
+            },
+            1024:{
                 items: 3,
                 gutter: 20,
             },

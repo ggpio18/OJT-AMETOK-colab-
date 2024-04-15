@@ -47,10 +47,8 @@
 
   @include for-size(tablet) {
     left: 3rem;
-    top: 60rem;
   }
   @include for-size(phone) {
-    top: 65rem;
     left: 0.5rem;
   }
   &__cards {

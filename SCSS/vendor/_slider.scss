@@ -6,12 +6,12 @@
     position: absolute;
     z-index: 3;
     bottom: -7rem;
-    left: 56rem;
+    left: 50%;
     @include for-size(tablet) {
-      left: 28rem;
+      left: 40%;
     }
     @include for-size(phone) {
-      left: 6rem;
+      left: 20%;
     }
 
     button {
@@ -32,9 +32,9 @@
   position: absolute;
   z-index: 1;
   bottom: 0;
-  right: 35rem;
+  right: 22%;
   @include for-size(tablet) {
-    right: 3rem;
+    right: 5%;
   }
   @include for-size(phone) {
     display: none;

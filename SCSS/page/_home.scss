@@ -5,8 +5,16 @@
 @use "../layout/" as *;
 
 // VIDEO PARRALAX PIO
+.try{
+  position: relative;
+
+  
 .video
 {
+  @include for-size(phone-landscape){
+    width: 100%;
+    height: 100vh!important;
+  }
     @include grid(1);
     /* Container styling for the YouTube video */
     #youtube-video-container {
@@ -32,6 +40,7 @@
     // reponsive needed
     .title1{
         // top: 100%;
+        padding-top: 5rem;
         text-align: center;
         h2{
             margin-top: 10rem;
@@ -39,6 +48,16 @@
             font-size: 40px;
         }
     }
+    @include for-size(tablet){
+      width: 100%;
+      height: 75vh;
+    }
+    @include for-size(phone-landscape){
+      width: 100%;
+      height: 100vh;
+    }
+    
+   
     @include for-size(phone){
         .title1{
             text-align: center;
@@ -49,7 +68,7 @@
         }
     }
     width: 100%;
-    height: 60vh;
+    // height: 60vh;
     background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(../../photo/section-bg-3.jpg);
     background-attachment: fixed;
     background-size: cover;
@@ -58,8 +77,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 10rem 0rem;
 }
     .play-btn{
+      top: 35%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -69,7 +92,7 @@
         width: 100px;
         height: 100px;
         z-index: 2;
-        position: relative;
+        position: absolute;
 }
     .play-btn:before{
         content: '';
@@ -119,6 +142,8 @@
         transform: scale(1.5);
         }
     }
+  }
+
 
 .container {
     @include for-size(phone){
@@ -348,7 +373,7 @@
       overflow: hidden;
       height: 70rem;
       @include for-size(phone) {
-        height: 60rem;
+        height: 65rem;
       }
       img {
         position: absolute;

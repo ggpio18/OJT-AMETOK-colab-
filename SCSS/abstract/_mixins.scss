@@ -26,12 +26,21 @@
       @media (max-width: 768px) {
         @content;
       }
+    } @else if $size == ipad {
+      @media (max-width: 1024px) {
+        @content;
+      }
     } @else if $size == desktop {
       @media (max-width: 1440px) {
         @content;
       }
     } @else if $size == big-desktop {
       @media (max-width: 1080px) {
+        @content;
+      }
+    }
+    @else if $size == phone-landscape {
+      @media (max-width: 896px) {
         @content;
       }
     }

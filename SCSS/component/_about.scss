@@ -181,7 +181,7 @@
   min-height: 45rem;
   background-position: center;
   @include for-size(phone) {
-    padding: 30rem 0 10rem 0;
+    padding-top: 10rem ;
   }
   &__wrapper {
     @include flex(space-between, center);
