@@ -1,3 +1,23 @@
+document.addEventListener('DOMContentLoaded',
+    function () {
+        const navItems = document
+            .querySelectorAll('.dropdown-parent');
+ 
+        navItems.forEach(item => {
+            item.addEventListener('click',
+                function () {
+                    navItems.forEach(navItem => navItem
+                        .classList.remove('active'));
+                    this.classList.add('active');
+                });
+        });
+    });
+
+$('.news__card').hover(function() {
+  $('.news__cards > .news__card').removeClass('active')
+  $(this).addClass('active');
+});
+
 const expNav = document.querySelectorAll(".experience__nav__link");
 const expContent = document.querySelectorAll(".experiences__item");
 expNav.forEach((exp) => {
@@ -20,6 +40,7 @@ function removeActiveContent() {
       content.classList.remove("active");
     });
   }
+
 
 const burgir = document.querySelector(".burger__menu");
 const headerA = document.querySelector(".header__action");

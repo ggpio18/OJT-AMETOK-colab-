@@ -1,6 +1,9 @@
 @use '../abstract/' as *;
 
+<<<<<<< HEAD
 // pio block header
+=======
+>>>>>>> arbilo
 .blockheader{
     &__wrapper{
         text-align: center;
@@ -16,7 +19,15 @@
           }
           h2{
             margin-bottom: 2rem;
+<<<<<<< HEAD
           }
 
     }
 }
+=======
+            color: $clr-dark;
+          }
+
+    }
+}
+>>>>>>> arbilo

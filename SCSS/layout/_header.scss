@@ -2,7 +2,10 @@
 
 // TOP HEADER
 .top{
-    @include mediaQuery{
+    @include for-size(phone){
+        display: none;
+    }
+    @include for-size(tablet){
         display: none;
     }
     background-color: $clr-headersec;
@@ -77,17 +80,28 @@
     
 // MAIN HEADER
 .header{
-    @include mediaQuery{
+    @include for-size(phone){
         padding-top: 2rem;
         padding-bottom: 2rem;
     }
     background-color: $clr-primary;
     &__wrapper{
-        @include mediaQuery{
+        @include for-size(tablet){
+            display: grid;
+            grid-template-columns: 12.5fr .5fr .5fr;
+            gap: 1rem;
+            padding-top: 2rem; 
+            padding-bottom: 2rem;
+        }
+        @include for-size(phone){
             display: grid;
             grid-template-columns: 5fr .5fr .5fr;
-            gap: 1rem;     
+            gap: 1rem;   
+            padding-top: 0; 
+            padding-bottom: 0;
         }
+        
+
         display: grid;
         align-items: center;
         grid-template-columns: 1.6fr 4fr 0.5fr 1.5fr;
@@ -95,32 +109,21 @@
     }
 
     &__nav{
-        @include mediaQuery{
+        @include for-size(tablet){
             display: none;
         }
+        @include for-size(phone){
+            display: none;
+        }
+        
         display: inline-flex;
         justify-content: flex-end;
         gap: 3rem;
         padding-left: 2rem;
         padding-right: 2rem;
         
-        a{
-            display: inline-block;
-            align-items: center;
-            gap: .5rem;
-            color: $clr-headertext;
-            font-family: "Barlow-Reg";
-            font-weight: bold;
-            &:hover{
-                color: $clr-headersec;
-            }
-            i{
-                font-size: 1rem;
-            }
-            
-        }
         
-        .dropdown-parent:after {
+        .dropdown-parent:after{
             @include mediaQuery{
                 display: none;
             }
@@ -131,47 +134,98 @@
                 transform: scaleX(0);  
                 transition: transform 250ms ease-in-out;
               }  
-              .dropdown-parent:hover:after { 
-                @include mediaQuery{
+              
+              .dropdown-parent:not(.active):hover:after { 
+                @include for-size(tablet){
                     display: none;
                 }
+                @include for-size(phone){
+                    display: none;
+                }
+                
                 transform: scaleX(1); 
+               
             }
         
             .dropdown-parent:after {
-                @include mediaQuery{
+                @include for-size(tablet){
+                    display: none;
+                }
+                @include for-size(phone){
                     display: none;
                 }
             transform-origin: left;
         }
         .dropdown-parent{
-            @include mediaQuery{
+            @include for-size(tablet){
+                display: none;
+            }
+            @include for-size(phone){
                 display: none;
             }
             position: relative;
             cursor: pointer;
+            a{
+                display: inline-block;
+                align-items: center;
+                gap: .5rem;
+                color: $clr-headertext;
+                font-family: "Barlow-Reg";
+                font-weight: bold;
+                &:hover{
+                    color: $clr-dark;
+                }
+                
+                i{
+                    font-size: 1rem;
+                }
+                h4{
+                    font-family: "Barlow-Reg";
+                    color: $clr-headertext;
+                    margin: 0;
+                    &:hover{
+                        color: $clr-dark;
+                    }
+                }
+                
+            }
             
         }
+       
         .dropdown-parent:hover .main-dropdown{
-            @include mediaQuery{
+            @include for-size(phone){
                 display: none;
             }
             display: block;
+            position:fixed;
             z-index: 9999;
             opacity: 1;
             transition: all;
         }
+
+        .dropdown-parent.active{
+                display:block;
+                content: '';
+                width: auto;
+                border-bottom: solid 2px $clr-accent;   
+                transition: transform 250ms ease-in-out;
+                h4{
+                    color: black;
+                }
+                    
+            }
+        
         
         .main-dropdown{
-            @include mediaQuery{
+            @include for-size(phone){
             display: none;
         }
-           display: none;
+            display: none;
             position:absolute;
             background-color: $clr-primary;
             width:25rem;
             height: auto;
-            top: 6rem;
+            top: 10rem;
             padding-top: 2rem;
             padding-bottom: 1rem;
             padding-left: 3rem;
@@ -181,7 +235,9 @@
                 padding-bottom: 1.5rem;
             }
             
+            
         }
+        
         .main-dropdown li{
             border-bottom: solid 1px rgba(0, 0, 0, 0.2);      
         }
@@ -189,6 +245,7 @@
             border: none;
         } 
     }
+    
     .icons ul{
         display: flex;
         justify-content: center;
@@ -199,21 +256,27 @@
         }   
     }
     .icons ul li:first-child{
-        @include mediaQuery{
+        @include for-size(phone){
+            display: none;
+        }
+        @include for-size(tablet){
             display: none;
         }
     }
         
     .logo{
       img{
-        @include mediaQuery {
+        @include for-size(phone) {
         width: 13rem;
         }
             width: 15rem;
         }
     }
     .call{
-        @include mediaQuery{
+        @include for-size(phone){
+            display: none;
+        }
+        @include for-size(tablet){
             display: none;
         }
         background-color: $clr-accent;
@@ -248,7 +311,7 @@
     // HEADER ACTION
     .header__action{
         display: none;
-        @include mediaQuery{ 
+        @include for-size(tablet){ 
             position: fixed;
             background-color: $clr-primary;
             padding: 2rem;
@@ -259,18 +322,40 @@
             overflow: hidden;
             transition: transform 250ms ease;
         }
+        @include for-size(phone){ 
+            position: fixed;
+            background-color: $clr-primary;
+            padding: 2rem;
+            height: 100vh;
+            width: 80%;
+            top: 0;
+            right: -360px;
+            overflow: hidden;
+            transition: transform 250ms ease;
+        }
+        
         a{
-            @include mediaQuery{
+            @include for-size(phone){
+                color:$clr-headersec;
+            }
+            @include for-size(tablet){
                 color:$clr-headersec;
             }
             
         }
         ul{
-            @include mediaQuery{
+            @include for-size(phone){
                 display: flex;
                 flex-direction: column;
-                gap: 3rem;
-                margin-bottom: 2rem;
+                gap: 2rem;
+                
+                
+            }
+            @include for-size(tablet){
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                
                 
             }
         }
@@ -279,14 +364,21 @@
             margin-bottom: 5rem;
         }
         i{
-            @include mediaQuery{
+            @include for-size(phone){
+                display: flex;
+                font-size: 3rem;
+            }
+            @include for-size(tablet){
                 display: flex;
                 font-size: 3rem;
             }
         }
         
         .dropdown-parent-mobile{
-            @include mediaQuery {
+            @include for-size(tablet){
+                border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+            }
+            @include for-size(phone){
                 border-bottom: solid 1px rgba(0, 0, 0, 0.2);
             }
         }
@@ -295,11 +387,25 @@
     }
     .header__action.show{
         display: block !important;
-        @include mediaQuery{
+        @include for-size(tablet){
             position: absolute;
+            z-index: 999;
             background-color: $clr-primary;
             padding: 3rem;
-            height: 100vh;
+            height: auto;
+            width: 55%;
+            top: 0;
+            right: 0;
+            transition: transform 250ms ease;
+            box-shadow: 10rem;
+            padding-top: 8rem;
+        }
+        @include for-size(phone){
+            position: absolute;
+            z-index: 999;
+            background-color: $clr-primary;
+            padding: 3rem;
+            height: auto;
             width: 85%;
             top: 0;
             right: 0;
@@ -307,38 +413,49 @@
             box-shadow: 10rem;
             padding-top: 8rem;
         }
+        
     }
-    .header__nav-mobile li{
-        @include mediaQuery{
-            color: $clr-headersec;
-            padding-bottom: 2rem;
-        }
-          
-    }
+    
+    
     .header__nav-mobile li:last-child{
-        @include mediaQuery{
+        @include for-size(phone){
+            border: none;
+        } 
+        @include for-size(tablet){
             border: none;
         } 
     } 
     .dropdown-parent-mobile a{
         display: none;
-        @include mediaQuery{
+        @include for-size(phone){
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-weight: bold;
+            padding-bottom: 2rem;
+        }
+        @include for-size(tablet){
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            padding-bottom: 2rem;
         }
     }
     .dropdown-parent-mobile i{
-        @include mediaQuery{
+        @include for-size(phone){
+            font-size: 1rem;
+        }
+        @include for-size(tablet){
             font-size: 1rem;
         }
     }
     .main-dropdown-mobile{
         display: block;
-        padding:2rem;
-        
+        padding-left: 2rem;
+        padding-bottom: 2rem;
     }
+    
     .main-dropdown-mobile ul{
         overflow: hidden;
         display: flex;
@@ -359,6 +476,7 @@
     }
     .main-dropdown-mobile li a{
         color: $clr-headertext;
+        padding-top: 2rem;
     }
     .main-dropdown ul li{
         border: none;
@@ -375,6 +493,7 @@
             border-radius: 1px 0 0 1px;
             outline: none;
             color: $clr-headertext;
+            margin-top: 3rem;
         }
     
         .shopping__cart{
@@ -406,8 +525,6 @@
     }
 
     .searchTerm {
-        
-      
         width: 100%;
         border: 1px solid rgba(0, 0, 0, 0.2);
         padding: 5px;
@@ -425,14 +542,30 @@
         margin-top: 3rem;
     }
     .cart{
-    @include mediaQuery{
+    @include for-size(phone){
         img{
             width: 3rem;
         }
         }
     }
     .text{
-        @include mediaQuery{
+        @include for-size(phone){
+        p{
+            color: black;
+            font-weight: bold;
+        }
+        :hover{
+            color: $clr-accent;
+        }
+    }
+    @include for-size(tablet){
+        img{
+            width: 3rem;
+        }
+        }
+    }
+    .text{
+        @include for-size(tablet){
         p{
             color: black;
             font-weight: bold;
@@ -442,11 +575,18 @@
         }
     }
     }
+    
 
     // BUGER MENU
     .burger__menu{
         display: none;
-        @include mediaQuery{
+        @include for-size(phone){
+            display: flex;
+            flex-direction: column;
+            gap: .3rem;
+            z-index: 999;
+        }
+        @include for-size(tablet){
             display: flex;
             flex-direction: column;
             gap: .3rem;
@@ -455,7 +595,14 @@
         display: none;
     }
     .burger__menu span{
-        @include mediaQuery{
+        @include for-size(phone){
+            display: block;
+            width: 2.5rem;
+            height: .3rem;
+            background-color: $clr-headersec;
+            cursor: pointer;
+        }
+        @include for-size(tablet){
             display: block;
             width: 2.5rem;
             height: .3rem;
@@ -464,26 +611,44 @@
         }
     }
     .burger__menu.show span{
-        @include mediaQuery{
+        @include for-size(phone){
+            height: .3rem;
+            border-radius: 3rem;
+        }
+        @include for-size(tablet){
             height: .3rem;
             border-radius: 3rem;
         }
     }
     .burger__menu.show span:first-child{
-        @include mediaQuery {
+        @include for-size(phone) {
+            transform: translateY(-9px);
+            rotate: 224deg;
+            transition: transform 250ms ease-out;
+        }
+        @include for-size(tablet) {
             transform: translateY(-9px);
             rotate: 224deg;
             transition: transform 250ms ease-out;
         }
     }
     .burger__menu.show span:nth-child(2){
-        @include mediaQuery{
+        @include for-size(phone){
+            visibility: hidden;
+            transition: transform 250ms ease-out;
+        }
+        @include for-size(tablet){
             visibility: hidden;
             transition: transform 250ms ease-out;
         }
     }
     .burger__menu.show span:last-child{
-        @include mediaQuery{
+        @include for-size(phone){
+            transform: translateY(9px);
+            rotate: -224deg;
+            transition: transform 250ms ease-out;
+        }
+        @include for-size(tablet){
             transform: translateY(9px);
             rotate: -224deg;
             transition: transform 250ms ease-out;
