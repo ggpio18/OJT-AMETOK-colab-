@@ -37,6 +37,27 @@
     }
   }
 
+//mediaQuery
+@mixin for-size($size) {
+    @if $size == phone {
+      @media (max-width: 420px) {
+        @content;
+      }
+    } @else if $size == tablet {
+      @media (max-width: 768px) {
+        @content;
+      }
+    } @else if $size == desktop {
+      @media (max-width: 1440px) {
+        @content;
+      }
+    } @else if $size == big-desktop {
+      @media (max-width: 1080px) {
+        @content;
+      }
+    }
+  }
+
 @mixin grid($cols: 1, $gap: 1rem){
     display: grid;
     grid-template-columns: repeat($cols, 1fr);

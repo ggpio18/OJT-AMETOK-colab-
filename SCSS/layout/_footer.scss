@@ -2,3 +2,177 @@
 @use "../base/" as *;
 
 
+@use '../abstract/' as *;
+// FOOTER LINKS PIO
+.linkf{
+    padding: 5rem;
+    background-image: url("../../photo/footer-bg-1.jpg");
+    background-size: cover;
+    background-position: center;
+    &__wrapper{
+        @include grid(4);
+        @include for-size(big-desktop){
+            @include grid(4);
+        }
+        @include for-size(tablet){
+            @include grid(2);
+        }
+        @include for-size(phone){
+            @include grid(1);
+        }
+        .linkf__col{
+            
+            h3{
+                color: $clr-light;
+                margin-bottom: 3rem;
+                font-size: 2rem;
+            }
+            p{
+                margin-bottom: 3rem;
+                color: #b2b7b7;
+                font-size: 1.3rem;
+            }
+            ul{
+                li{
+                    margin-bottom: 1rem;
+                    a{
+                        display: inline-block;
+                        color: #b2b7b7;
+                        font-size: 1.3rem;
+                        position: relative;
+                        text-decoration: none;
+                        transition: ease-in-out 0.3s;
+                    }
+                    a:hover{
+                        color: $clr-light;
+                    }
+                    a:after {
+                        content: "";
+                        display: block;
+                        width: 0;
+                        left: 0;
+                        border-bottom: 2px solid $clr-accent;
+                        margin-left: 1;
+                        transition:all 0.3s linear 0s;;
+                        color: $clr-light;
+                      }
+                      a:hover:after {
+                        width: 25%;
+                        color: $clr-light;
+                    }
+                    
+                }
+            }
+            .linkf__det{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                line-height: 2rem;
+                padding-right: 2rem;
+            .border{
+                 padding-bottom: 1rem;
+                border-bottom: .1rem solid;
+                border-color: #3e3e3e;
+                color: #b2b7b7;
+                font-size: 1.3rem;
+            }
+            
+            li{
+                color: $clr-accent;
+                 color: #b2b7b7;
+                font-size: 1.3rem;
+                i{
+                 color: $clr-accent;
+                font-size: 1.3rem;
+                }
+            }
+                
+            }
+            .socials{
+                @include flex(flex-start, left);
+                gap: 3rem;
+                li i{
+                    color: $clr-light;
+                }
+                li i:hover{
+                    color: $clr-accent;
+                }
+            }
+             form{
+                    margin-bottom: 3rem;
+                    position: relative;
+                    input{
+                        // overflow: hidden; try
+                        width: 300px;
+                        height: 50px;
+                        padding: 1rem;
+                        border: none;
+                        border-bottom: 1px solid $clr-dark;
+                    }
+                    
+                }
+            
+        }
+       
+        @include mediaQuery{ //phone
+            @include grid(1);
+            gap: 3rem;
+        }
+    }
+}
+//FOOTER PIO
+.footer{
+    overflow: hidden;
+    background-color: $clr-footer;
+    padding: 5rem;
+    .footer__wrapper{
+        @include for-size(tablet){
+        gap: 2rem;
+        place-items: center;
+        gap: 16rem;
+        }
+        @include grid(2);
+        h5{
+            color: $clr-light;
+        }
+        #yel-text{
+            color: $clr-accent;
+        }
+        span{
+            color: $clr-light;
+        }
+        ul{
+            display: none;
+        }
+        gap: 2rem;
+        place-items: center;
+        gap: 28rem;
+        h5{
+            color: $clr-light;
+        }
+        ul{
+            display: flex;
+            justify-content: space-between;
+            gap: 3rem;
+            li{
+                a{
+                    color: $clr-light;
+                }
+                a:hover{
+                    color: $clr-accent;
+                }
+            }
+        }
+        @include mediaQuery{ //phone
+        @include grid(1);
+        gap: 42rem;
+        h5{
+            color: $clr-light;
+        }
+        ul{
+            display: none;
+        }
+        }
+        
+    }
+}

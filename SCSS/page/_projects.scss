@@ -1,0 +1,506 @@
+@use '../abstract/' as *;
+@use '../base/' as *;
+@use '../component/' as *;
+@use '../layout/' as *;
+@use '../vendor/' as *;
+
+
+.projects{
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    .btnPost{
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+        text-align: center;
+    }
+    &__wrapper{
+        // @include grid(2);
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(500px,2fr));
+        a{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+        .card {
+            position: relative;
+            // width: 555px;
+            // height: 500px;
+            margin: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: box-shadow 0.3s, background-color 0.3s;
+        }
+        
+        .card:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        
+        .card:hover img {
+            filter: brightness(50%);
+            transform: scale(1.5);
+        }
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+        
+        .hover-box {
+            position: absolute;
+            bottom: -100%;
+            left: 20px;
+            background-color: #fcb222;
+            padding: 30px 140px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: bottom 0.3s ease;
+        }
+        
+        .card:hover .hover-box {
+            bottom: 5%;
+        }
+        
+        .subtitle {
+            color: $clr-light;
+            font-size: 16px;
+            padding-top: 10rem;
+            margin-top: 30rem;
+            margin-left: -120px;
+            margin-bottom: 5px;
+        }
+        
+        .title {
+            a{
+                color: $clr-light;
+            }
+            font-size: 20px;
+            font-weight: bold;
+            margin-left: -120px;
+            margin-bottom: 10px;
+        }
+        
+        .arrow-button {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            background-color: #e6a423;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .arrow-button:hover {
+            background-color: rgba(255, 255, 255, 0.5);
+            color: #000;
+        }
+    }
+}
+
+@include for-size(tablet){
+    .projects{
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+        .btnPost{
+            margin-top: 5rem;
+            margin-bottom: 5rem;
+            text-align: center;
+        }
+        &__wrapper{
+            // @include grid(2);
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(300px,fr));
+            a{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.3s ease, filter 0.3s ease;
+            }
+            .card {
+                position: relative;
+                // width: 555px;
+                // height: 500px;
+                margin: 20px;
+                overflow: hidden;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: box-shadow 0.3s, background-color 0.3s;
+            }
+            
+            .card:hover {
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+                background-color: rgba(0, 0, 0, 0.1);
+            }
+            
+            .card:hover img {
+                filter: brightness(50%);
+                transform: scale(1.5);
+            }
+            .card img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.3s ease, filter 0.3s ease;
+            }
+            
+            .hover-box {
+                position: absolute;
+                bottom: -100%;
+                left: 20px;
+                background-color: #fcb222;
+                padding: 30px 140px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                transition: bottom 0.3s ease;
+            }
+            
+            .card:hover .hover-box {
+                bottom: 5%;
+            }
+            
+            .subtitle {
+                color: $clr-light;
+                font-size: 16px;
+                padding-top: 10rem;
+                margin-top: 30rem;
+                margin-left: -70px;
+                margin-bottom: 5px;
+            }
+            
+            .title {
+                a{
+                    color: $clr-light;
+                }
+                font-size: 20px;
+                font-weight: bold;
+                margin-left: -70px;
+                margin-bottom: 10px;
+            }
+            
+            .arrow-button {
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                background-color: #e6a423;
+                color: #fff;
+                border: none;
+                padding: 10px 20px;
+                cursor: pointer;
+                transition: background-color 0.3s, color 0.3s;
+            }
+            
+            .arrow-button:hover {
+                background-color: rgba(255, 255, 255, 0.5);
+                color: #000;
+            }
+        }
+    }
+}
+@include for-size(phone){
+    .projects{
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+        .btnPost{
+            margin-top: 5rem;
+            margin-bottom: 5rem;
+            text-align: center;
+        }
+        &__wrapper{
+            // @include grid(2);
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+            a{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.3s ease, filter 0.3s ease;
+            }
+            .card {
+                position: relative;
+                // width: 555px;
+                // height: 500px;
+                margin: 20px;
+                overflow: hidden;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: box-shadow 0.3s, background-color 0.3s;
+            }
+            
+            .card:hover {
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+                background-color: rgba(0, 0, 0, 0.1);
+            }
+            
+            .card:hover img {
+                filter: brightness(50%);
+                transform: scale(1.5);
+            }
+            .card img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.3s ease, filter 0.3s ease;
+            }
+            
+            .hover-box {
+                position: absolute;
+                bottom: -150%;
+                left: 0px;
+                background-color: #fcb222;
+                padding: 5px 171px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                transition: bottom 0.3s ease;
+                bottom: -1%;
+            }
+            
+            .card:hover .hover-box {
+                bottom: 5%;
+            }
+            
+            .subtitle {
+                color: $clr-light;
+                font-size: 16px;
+                padding-top: 10rem;
+                margin-top: 30rem;
+                margin-left: -145px;
+                margin-bottom: 5px;
+            }
+            
+            .title {
+                a{
+                    color: $clr-light;
+                }
+                font-size: 20px;
+                font-weight: bold;
+                margin-left: -145px;
+                margin-bottom: 10px;
+            }
+            
+            .arrow-button {
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                background-color: #e6a423;
+                color: #fff;
+                border: none;
+                padding: 10px 20px;
+                cursor: pointer;
+                transition: background-color 0.3s, color 0.3s;
+            }
+            
+            .arrow-button:hover {
+                background-color: rgba(255, 255, 255, 0.5);
+                color: #000;
+            }
+        }
+    }
+    
+}
+// @include for-size(tablet){
+//     .projects{
+//         margin-top: 5rem;
+//         margin-bottom: 5rem;
+//         .btnPost{
+//             margin-top: 5rem;
+//             margin-bottom: 5rem;
+//             text-align: center;
+//         }
+//         &__wrapper{
+//             @include grid(1);
+//             place-items: center;
+//             a{
+//                 width: 100%;
+//                 height: 100%;
+//                 object-fit: cover;
+//                 transition: transform 0.3s ease, filter 0.3s ease;
+//             }
+//             .card {
+//                 position: relative;
+//                 width: 450px;
+//                 height: 450px;
+//                 margin: 20px;
+//                 overflow: hidden;
+//                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+//                 display: flex;
+//                 justify-content: center;
+//                 align-items: center;
+//                 transition: box-shadow 0.3s, background-color 0.3s;
+//             }
+            
+//             .card:hover {
+//                 box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+//                 background-color: rgba(0, 0, 0, 0.1);
+//             }
+            
+//             .card:hover img {
+//                 filter: brightness(50%);
+//                 transform: scale(1.5);
+//             }
+//             .card img {
+//                 width: 100%;
+//                 height: 100%;
+//                 object-fit: cover;
+//                 transition: transform 0.3s ease, filter 0.3s ease;
+//             }
+            
+//             .hover-box {
+//                 position: absolute;
+//                 bottom: -100%;
+//                 left: 20px;
+//                 background-color: #fcb222;
+//                 padding: 30px 140px;
+//                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+//                 transition: bottom 0.3s ease;
+//             }
+            
+//             .card:hover .hover-box {
+//                 bottom: 5%;
+//             }
+            
+//             .subtitle {
+//                 color: $clr-light;
+//                 font-size: 16px;
+//                 padding-top: 10rem;
+//                 margin-top: 30rem;
+//                 margin-left: -70px;
+//                 margin-bottom: 5px;
+//             }
+            
+//             .title {
+//                 a{
+//                     color: $clr-light;
+//                 }
+//                 font-size: 20px;
+//                 font-weight: bold;
+//                 margin-left: -70px;
+//                 margin-bottom: 10px;
+//             }
+            
+//             .arrow-button {
+//                 position: absolute;
+//                 top: 0px;
+//                 right: 0px;
+//                 background-color: #e6a423;
+//                 color: #fff;
+//                 border: none;
+//                 padding: 10px 20px;
+//                 cursor: pointer;
+//                 transition: background-color 0.3s, color 0.3s;
+//             }
+            
+//             .arrow-button:hover {
+//                 background-color: rgba(255, 255, 255, 0.5);
+//                 color: #000;
+//             }
+//         }
+//     }
+// }
+// @include for-size(phone){
+//     .projects{
+//         margin-top: 5rem;
+//         margin-bottom: 5rem;
+//         .btnPost{
+//             margin-top: 5rem;
+//             margin-bottom: 5rem;
+//             text-align: center;
+//         }
+//         &__wrapper{
+//             @include grid(1);
+//             place-items: center;
+//             a{
+//                 width: 100%;
+//                 height: 100%;
+//                 object-fit: cover;
+//                 transition: transform 0.3s ease, filter 0.3s ease;
+//             }
+//             .card {
+//                 position: relative;
+//                 width: 305px;
+//                 height: 390px;
+//                 margin: 20px;
+//                 overflow: hidden;
+//                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+//                 display: flex;
+//                 justify-content: center;
+//                 align-items: center;
+//                 transition: box-shadow 0.3s, background-color 0.3s;
+//             }
+            
+//             .card:hover {
+//                 box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+//                 background-color: rgba(0, 0, 0, 0.1);
+//             }
+            
+//             .card:hover img {
+//                 filter: brightness(50%);
+//                 transform: scale(1.5);
+//             }
+//             .card img {
+//                 width: 100%;
+//                 height: 100%;
+//                 object-fit: cover;
+//                 transition: transform 0.3s ease, filter 0.3s ease;
+//             }
+            
+//             .hover-box {
+//                 position: absolute;
+//                 bottom: -100%;
+//                 left: 20px;
+//                 background-color: #fcb222;
+//                 padding: 30px 140px;
+//                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+//                 transition: bottom 0.3s ease;
+//             }
+            
+//             .card:hover .hover-box {
+//                 bottom: 5%;
+//             }
+            
+//             .subtitle {
+//                 color: $clr-light;
+//                 font-size: 16px;
+//                 padding-top: 10rem;
+//                 margin-top: 30rem;
+//                 margin-left: -70px;
+//                 margin-bottom: 5px;
+//             }
+            
+//             .title {
+//                 a{
+//                     color: $clr-light;
+//                 }
+//                 font-size: 20px;
+//                 font-weight: bold;
+//                 margin-left: -70px;
+//                 margin-bottom: 10px;
+//             }
+            
+//             .arrow-button {
+//                 position: absolute;
+//                 top: 0px;
+//                 right: 0px;
+//                 background-color: #e6a423;
+//                 color: #fff;
+//                 border: none;
+//                 padding: 10px 20px;
+//                 cursor: pointer;
+//                 transition: background-color 0.3s, color 0.3s;
+//             }
+            
+//             .arrow-button:hover {
+//                 background-color: rgba(255, 255, 255, 0.5);
+//                 color: #000;
+//             }
+//         }
+//     }
+// }
