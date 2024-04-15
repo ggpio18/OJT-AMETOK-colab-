@@ -1,6 +1,12 @@
 @use '../abstract/' as *;
 
 .blockheader1{
+  @include for-size(tablet){
+    padding-top: 80rem;
+  }
+  @include for-size(phone){
+    padding-top: 75rem;
+  }
   padding-top: 50rem;
     &__wrapper{
         text-align: center;
